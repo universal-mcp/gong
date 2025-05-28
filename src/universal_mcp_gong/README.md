@@ -1,10 +1,10 @@
-# Gong MCP Server
+# GongApp MCP Server
 
-An MCP Server for the Gong API.
+An MCP Server for the GongApp API.
 
 ## 🛠️ Tool List
 
-This is automatically generated from OpenAPI schema for the Gong API.
+This is automatically generated from OpenAPI schema for the GongApp API.
 
 
 | Tool | Description |
