@@ -199,7 +199,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the call records service fails (e.g., network error, invalid response).
 
         Tags:
-            list, calls, fetch, filter, api, important
+            list, calls, fetch, filter, api
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -230,7 +230,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to the permission profile endpoint fails.
 
         Tags:
-            get, permission-profile, fetch, api, management, important
+            get, permission-profile, fetch, api, management
         """
         if profileId is None:
             raise ValueError("Missing required parameter 'profileId'")
@@ -356,7 +356,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to update the profile fails.
 
         Tags:
-            update, permission-profile, management, important
+            update, permission-profile, management
         """
         if profileId is None:
             raise ValueError("Missing required parameter 'profileId'")
@@ -534,7 +534,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the HTTP request to create the permission profile fails (e.g., due to network issues or invalid input).
 
         Tags:
-            create, permission-profile, management, api, important
+            create, permission-profile, management, api
         """
         if workspaceId is None:
             raise ValueError("Missing required parameter 'workspaceId'")
@@ -627,7 +627,7 @@ class GongApp(APIApplication):
             ValueError: If any of the required parameters ('meetingId', 'startTime', 'endTime', 'invitees', or 'organizerEmail') are missing.
 
         Tags:
-            update, meeting, management, important
+            update, meeting, management
         """
         if meetingId is None:
             raise ValueError("Missing required parameter 'meetingId'")
@@ -670,7 +670,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the HTTP response indicates an unsuccessful delete operation.
 
         Tags:
-            delete, meeting, api, important
+            delete, meeting, api
         """
         if meetingId is None:
             raise ValueError("Missing required parameter 'meetingId'")
@@ -748,7 +748,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to the customer engagement API fails with a response error status.
 
         Tags:
-            report, content-view, event, customer-engagement, api, http, important
+            report, content-view, event, customer-engagement, api, http
         """
         if reportingSystem is None:
             raise ValueError("Missing required parameter 'reportingSystem'")
@@ -855,7 +855,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the reporting endpoint fails with a non-success status code.
 
         Tags:
-            report, content, share, customer-engagement, event, api, important
+            report, content, share, customer-engagement, event, api
         """
         if reportingSystem is None:
             raise ValueError("Missing required parameter 'reportingSystem'")
@@ -961,7 +961,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the server response contains an HTTP error status.
 
         Tags:
-            report, submit, action, customer-engagement, api, important
+            report, submit, action, customer-engagement, api
         """
         if reportingSystem is None:
             raise ValueError("Missing required parameter 'reportingSystem'")
@@ -1015,7 +1015,7 @@ class GongApp(APIApplication):
             requests.exceptions.HTTPError: If the HTTP request to the CRM integrations endpoint fails or returns an unsuccessful status code.
 
         Tags:
-            list, crm, integration, api, important
+            list, crm, integration, api
         """
         url = f"{self.base_url}/v2/crm/integrations"
         query_params = {}
@@ -1039,7 +1039,7 @@ class GongApp(APIApplication):
             HTTPError: If the API request returns an unsuccessful status code.
 
         Tags:
-            register, crm, integration, api, important
+            register, crm, integration, api
         """
         if ownerEmail is None:
             raise ValueError("Missing required parameter 'ownerEmail'")
@@ -1074,7 +1074,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP response indicates an unsuccessful status code.
 
         Tags:
-            delete, crm, integration, api, important
+            delete, crm, integration, api
         """
         if integrationId is None:
             raise ValueError("Missing required parameter 'integrationId'")
@@ -1107,7 +1107,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the server returns an unsuccessful status code, indicating a failure in updating user access.
 
         Tags:
-            update, calls, users-access, api, management, important
+            update, calls, users-access, api, management
         """
         request_body = {
             "callAccessList": callAccessList,
@@ -1134,7 +1134,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request fails or returns an unsuccessful status code.
 
         Tags:
-            get, calls, users-access, filter, api, important
+            get, calls, users-access, filter, api
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1162,7 +1162,7 @@ class GongApp(APIApplication):
             HTTPError: If the HTTP request to delete users' access fails, an HTTPError will be raised.
 
         Tags:
-            delete, access-management, calls, important
+            delete, access-management, calls
         """
         request_body = {
             "callAccessList": callAccessList,
@@ -1190,7 +1190,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request fails or returns an error status.
 
         Tags:
-            list, users, async_job, batch, management, important
+            list, users, async_job, batch, management
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1221,7 +1221,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the HTTP request to the backend service fails.
 
         Tags:
-            list, interaction-stats, api, batch, important
+            list, interaction-stats, api, batch
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1252,7 +1252,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the scorecards endpoint returns an unsuccessful status code.
 
         Tags:
-            list, scorecards, management, stats, paginated, important
+            list, scorecards, management, stats, paginated
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1285,7 +1285,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the HTTP request to the server fails or returns an error status.
 
         Tags:
-            list, activity, user-management, stats, important
+            list, activity, user-management, stats
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1318,7 +1318,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Propagated if the underlying HTTP POST request fails with an HTTP error response.
 
         Tags:
-            list, aggregate, activity, user-management, batch, important
+            list, aggregate, activity, user-management, batch
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1352,7 +1352,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the HTTP request to the aggregation endpoint fails.
 
         Tags:
-            list, aggregate, activity, users, batch, important
+            list, aggregate, activity, users, batch
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1392,7 +1392,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to create the meeting fails (e.g., due to network error or server-side issue).
 
         Tags:
-            add, meeting, create, management, api, important
+            add, meeting, create, management, api
         """
         if startTime is None:
             raise ValueError("Missing required parameter 'startTime'")
@@ -1431,7 +1431,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to the integration status endpoint returns an unsuccessful status code.
 
         Tags:
-            integration-status, status, check, api, async-job, important
+            integration-status, status, check, api, async-job
         """
         request_body = {
             "emails": emails,
@@ -1458,7 +1458,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the integration settings API fails.
 
         Tags:
-            integration-settings, submit, api, management, important
+            integration-settings, submit, api, management
         """
         if integrationTypeSettings is None:
             raise ValueError("Missing required parameter 'integrationTypeSettings'")
@@ -1487,7 +1487,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the API fails with a bad status code.
 
         Tags:
-            get, flows, prospect-management, api, important
+            get, flows, prospect-management, api
         """
         if crmProspectsIds is None:
             raise ValueError("Missing required parameter 'crmProspectsIds'")
@@ -1520,7 +1520,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the API POST request returns an unsuccessful status code.
 
         Tags:
-            assign, prospects, api, batch, important, management
+            assign, prospects, api, batch, management
         """
         if crmProspectsIds is None:
             raise ValueError("Missing required parameter 'crmProspectsIds'")
@@ -1576,7 +1576,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the API response status indicates an HTTP error.
 
         Tags:
-            add, digital-interaction, api, event, important
+            add, digital-interaction, api, event
         """
         if eventId is None:
             raise ValueError("Missing required parameter 'eventId'")
@@ -1620,7 +1620,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the API request fails or returns an unsuccessful status code.
 
         Tags:
-            purge, data-privacy, erase, important
+            purge, data-privacy, erase
         """
         if phoneNumber is None:
             raise ValueError("Missing required parameter 'phoneNumber'")
@@ -1647,7 +1647,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the underlying HTTP request fails or receives a non-success response status.
 
         Tags:
-            purge, erase, data-privacy, email, important
+            purge, erase, data-privacy, email
         """
         if emailAddress is None:
             raise ValueError("Missing required parameter 'emailAddress'")
@@ -1675,7 +1675,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to the CRM API fails.
 
         Tags:
-            list, crm, schema, fields, integration, api, important
+            list, crm, schema, fields, integration, api
         """
         if integrationId is None:
             raise ValueError("Missing required parameter 'integrationId'")
@@ -1710,7 +1710,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the integration service fails or returns an error status.
 
         Tags:
-            upload, crm, schema, fields, integration, important
+            upload, crm, schema, fields, integration
         """
         if integrationId is None:
             raise ValueError("Missing required parameter 'integrationId'")
@@ -1747,7 +1747,7 @@ class GongApp(APIApplication):
             ValueError: If any of 'integrationId', 'objectType', or 'objectsCrmIds' parameters are missing.
 
         Tags:
-            get, crm, objects, integration, api, important
+            get, crm, objects, integration, api
         """
         if integrationId is None:
             raise ValueError("Missing required parameter 'integrationId'")
@@ -1785,7 +1785,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request made to retrieve call transcripts fails with a non-success status code.
 
         Tags:
-            get, list, calls, transcripts, batch, management, important
+            get, list, calls, transcripts, batch, management
         """
         if filter is None:
             raise ValueError("Missing required parameter 'filter'")
@@ -1813,7 +1813,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to fetch the workspace list fails or returns an unsuccessful status code.
 
         Tags:
-            list, workspaces, api, retrieve, important
+            list, workspaces, api, retrieve
         """
         url = f"{self.base_url}/v2/workspaces"
         query_params = {}
@@ -1836,7 +1836,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the user listing endpoint returns an unsuccessful status code.
 
         Tags:
-            list, users, api, management, important
+            list, users, api, management
         """
         url = f"{self.base_url}/v2/users"
         query_params = {
@@ -1888,7 +1888,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to the user settings history endpoint fails.
 
         Tags:
-            get, user-history, fetch, api, important
+            get, user-history, fetch, api
         """
         if id is None:
             raise ValueError("Missing required parameter 'id'")
@@ -1912,7 +1912,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the API fails or returns an unsuccessful status code.
 
         Tags:
-            list, trackers, management, api, important
+            list, trackers, management, api
         """
         url = f"{self.base_url}/v2/settings/trackers"
         query_params = {
@@ -1938,7 +1938,7 @@ class GongApp(APIApplication):
             HTTPError: If the HTTP request to the API fails or returns a non-success status code.
 
         Tags:
-            list, scorecards, settings, api, important
+            list, scorecards, settings, api
         """
         url = f"{self.base_url}/v2/settings/scorecards"
         query_params = {}
@@ -1961,7 +1961,7 @@ class GongApp(APIApplication):
             HTTPError: Raised if the HTTP request to the API endpoint fails due to an unsuccessful response status.
 
         Tags:
-            list, permission-profile, users, management, important
+            list, permission-profile, users, management
         """
         if profileId is None:
             raise ValueError("Missing required parameter 'profileId'")
@@ -1991,7 +1991,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request fails or the API returns an error status.
 
         Tags:
-            list, logs, api, management, important
+            list, logs, api, management
         """
         if logType is None:
             raise ValueError("Missing required parameter 'logType'")
@@ -2026,7 +2026,7 @@ class GongApp(APIApplication):
             HTTPError: If the HTTP request to retrieve the library structure fails or an invalid response is received.
 
         Tags:
-            get, library, structure, folders, management, important
+            get, library, structure, folders, management
         """
         url = f"{self.base_url}/v2/library/folders"
         query_params = {
@@ -2050,7 +2050,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the HTTP request to the remote API fails or returns an unsuccessful status code.
 
         Tags:
-            get, list, calls, folder, api, management, important
+            get, list, calls, folder, api, management
         """
         url = f"{self.base_url}/v2/library/folder-content"
         query_params = {k: v for k, v in [("folderId", folderId)] if v is not None}
@@ -2077,7 +2077,7 @@ class GongApp(APIApplication):
             requests.HTTPError: If the API request fails or returns a non-successful status.
 
         Tags:
-            list, flows, management, api, important
+            list, flows, management, api
         """
         if flowOwnerEmail is None:
             raise ValueError("Missing required parameter 'flowOwnerEmail'")
@@ -2110,7 +2110,7 @@ class GongApp(APIApplication):
             HTTPError: If the HTTP request to the data privacy API fails, e.g., due to network issues or a non-2xx response.
 
         Tags:
-            find, list, phone-number, data-privacy, reference, important
+            find, list, phone-number, data-privacy, reference
         """
         if phoneNumber is None:
             raise ValueError("Missing required parameter 'phoneNumber'")
@@ -2137,7 +2137,7 @@ class GongApp(APIApplication):
             HTTPError: If the HTTP request to the data privacy API fails or returns an error response.
 
         Tags:
-            search, data-privacy, email, api, important
+            search, data-privacy, email, api
         """
         if emailAddress is None:
             raise ValueError("Missing required parameter 'emailAddress'")
@@ -2165,7 +2165,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the CRM service returns an unsuccessful status code.
 
         Tags:
-            get, status, crm, request, sync, important
+            get, status, crm, request, sync
         """
         if integrationId is None:
             raise ValueError("Missing required parameter 'integrationId'")
@@ -2201,7 +2201,7 @@ class GongApp(APIApplication):
             requests.HTTPError: Raised if the HTTP request to the remote API returns an unsuccessful status code.
 
         Tags:
-            list, crmcalls, management, async_job, important
+            list, crmcalls, management, async_job
         """
         url = f"{self.base_url}/v2/calls/manual-crm-associations"
         query_params = {
@@ -2228,7 +2228,7 @@ class GongApp(APIApplication):
             HTTPError: If the HTTP request to the remote service fails or returns an error status.
 
         Tags:
-            list, permissions, profile-management, api, important
+            list, permissions, profile-management, api
         """
         if workspaceId is None:
             raise ValueError("Missing required parameter 'workspaceId'")
